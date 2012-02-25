@@ -1,0 +1,25 @@
+MWXCheckBox/MWXCheckBoxLabel provide the simple checkbox view and the simple
+label with the checkbox.
+
+How to use.
+1. Add `MWXCheckBox.h` and `MWXCheckBox.m` to your project.
+2. Add `MWXCheckBoxLabel.h` and `MWXCheckBoxLabel.m` to your project.
+
+
+Example.
+
+  MWXCheckBoxLabel * checkbox;
+  checkbox = [[MWXCheckBoxLabel alloc]
+	      initWithFrame:CGRectMake(10.0, 10.0, 50.0, 24.0)];
+  [checkbox addTarget:self
+	    action:@selector(checkboxAction:)
+	    forControlEvents:UIControlEventValueChanged];
+  checkbox.textLabel.text = @"Apple";
+  [self.view addSubview:checkbox];
+  [checkbox release];
+
+  -(void)checkboxAction:(MWXCheckBox *)checkbox
+  {
+    NSLog(@"DEBUG[checkbox] checked=%d", [checkbox checked]);
+  }
+
